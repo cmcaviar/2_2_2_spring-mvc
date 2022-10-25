@@ -17,6 +17,6 @@ private final CarDao carDao;
 
     @Override
     public List<Car> showCars(int count) {
-        return carDao.showCars(count);
+        return carDao.showCars().stream().limit(count).toList();
     }
 }
